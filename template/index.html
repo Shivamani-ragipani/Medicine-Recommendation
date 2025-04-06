@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="background-curve"></div>
+        <div class="content">
+            <div class="app-title">
+                <h1>Medicine</h1>
+                <h1>Recommendation</h1>
+            </div>
+            <button class="start-button" id="startButton">
+                Start
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Recommendation Screen -->
+    <div class="recommendation-screen" id="recommendationScreen">
+        <div class="recommendation-header">
+            <button class="back-button" id="backButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg>
+                Back
+            </button>
+            <h2>Medicine Recommendations</h2>
+        </div>
+
+        <div class="symptom-input">
+            <h3>Describe Your Symptoms</h3>
+            <textarea placeholder="E.g., I have a headache and slight fever since yesterday"></textarea>
+            <button class="analyze-button">
+                Analyze Symptoms
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12h20"></path>
+                    <path d="M12 2v20"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="results-container">
+            <div class="disclaimer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <p><strong>Medical Disclaimer:</strong> This is a demonstration project. The recommendations provided are not a substitute for professional medical advice.</p>
+            </div>
+
+            <div class="medicine-card">
+                <h4>Paracetamol (Acetaminophen)</h4>
+                <p class="dosage">Dosage: 500-1000mg every 4-6 hours as needed (max 4g per day)</p>
+                <p class="description">A pain reliever and fever reducer that works by blocking the production of certain natural substances that cause pain and fever.</p>
+                <a href="#" class="more-info">More Information</a>
+            </div>
+
+            <div class="medicine-card">
+                <h4>Ibuprofen</h4>
+                <p class="dosage">Dosage: 200-400mg every 4-6 hours as needed (max 1200mg per day)</p>
+                <p class="description">A nonsteroidal anti-inflammatory drug (NSAID) that reduces hormones that cause inflammation and pain in the body.</p>
+                <a href="#" class="more-info">More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle the screen transition
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const recommendationScreen = document.getElementById('recommendationScreen');
+            const startButton = document.getElementById('startButton');
+            const backButton = document.getElementById('backButton');
+
+            startButton.addEventListener('click', function() {
+                welcomeScreen.classList.add('hidden');
+                recommendationScreen.classList.add('visible');
+            });
+
+            backButton.addEventListener('click', function() {
+                welcomeScreen.classList.remove('hidden');
+                recommendationScreen.classList.remove('visible');
+            });
+        });
+    </script>
+</body>
+</html>
