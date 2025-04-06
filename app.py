@@ -69,6 +69,7 @@ st.markdown("""
 
     .medicine-card {
         background-color: #f9f9f9;
+        color: #000000;
         border-radius: 10px;
         padding: 1rem 1.5rem;
         margin: 1rem 0;
@@ -81,6 +82,12 @@ st.markdown("""
         transform: scale(1.02);
         box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
+    
+     .medicine-name {
+            font-size: 1.1rem;
+            color: #64b5f6;
+        }
+
 
     .critical-warning {
         background-color: #ffebee;
@@ -168,7 +175,16 @@ with col1:
     
     # User input
     st.markdown('<div style="text-align: center; max-width: 600px;">', unsafe_allow_html=True)
-    st.markdown('<h3 style="text-align: center;">Describe Your Symptoms</h3>', unsafe_allow_html=True)
+    st.markdown("""
+    <h3 style="text-align: left;" class="responsive-header">Describe Your Symptoms</h3>
+    <style>
+        @media screen and (max-width: 768px) {
+            .responsive-header {
+                text-align: center !important;
+            }
+        }
+    </style>
+    """, unsafe_allow_html=True)
     symptoms_text = st.text_area(
         "Please describe what you're experiencing in detail:",
         height=150,
@@ -294,7 +310,8 @@ st.markdown(symptom_html, unsafe_allow_html=True)
 # Footer
 st.markdown("""
 <div class="footer">
-    <p>AI Medicine Recommendation System © 2023 | For educational purposes only</p>
+    <p>AI Medicine Recommendation System | For educational purposes only</p>
     <p>Not for actual medical use | Always consult healthcare professionals</p>
+    <p>Developed by <a href="https://portfolio-shivamani.vercel.app/" target="_blank" style="color: #1565c0; text-decoration: underline;">Shivamani Ragipani</a></p>
 </div>
 """, unsafe_allow_html=True)
